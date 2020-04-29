@@ -1,0 +1,45 @@
+<!--3.VIDEO-TEXT--> 
+    <div style="height:{{row.gap_up}}px"></div>
+	<div class="container-fluid text-left hidden-xs">
+		<div class="row">
+				<div class="col-sm-6">
+						<video width="100%" controls >
+							<source src="{{'../content/_media/videos/'+row.video}}" type="video/mp4">  
+							Your browser does not support HTML5 video.
+						</video>
+				</div>
+				
+				<div class="col-sm-6" style="padding-left:60px;padding-right:120px">
+					
+					<h1 class="text1" ng-bind-html="row.title"></h1>
+					<h1 class="text2" ng-bind-html="row.subtitle"></h1>
+					<p class="text3" ng-bind-html="row.text"></p>
+                
+                	<div ng-include="'content/_cms/widgets/pageLink1.html'" class="text-center"></div>
+               
+					
+				</div>
+		</div>
+	</div>
+	<div class="container-fluid text-left visible-xs" >
+		<div class="row">
+			<div class="col-sm-12">
+				<br>
+				<h1 class="text1" ng-bind-html="row.title"></h1>
+				<h1 class="text2" ng-bind-html="row.subtitle"></h1>
+				<p class="text3" ng-bind-html="row.text"></p>
+				
+				<div ng-include="'content/_cms/widgets/pageLink1.html'" class="text-center"></div>
+                
+				
+				<div>
+					   <video width="100%" controls >
+							<source src="{{'../content/_media/videos/'+row.video}}" type="video/mp4">  
+							Your browser does not support HTML5 video.
+						</video>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="height:{{row.gap_down}}px"></div>
+	<!--3.VIDEO-TEXT END--> 

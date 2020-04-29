@@ -1,0 +1,124 @@
+<br><br>
+<div class="eshop_page">
+	
+    <div class="container ">
+		<h1 class="title1"><span>epi</span>shop</h1>
+		
+        <div class="row">
+           
+            <div class="col-sm-12">
+
+                <uib-accordion close-others="true">
+                                    
+                    <uib-accordion-group is-open="status.open" ng-repeat="category in categories"> 
+                        
+                        <uib-accordion-heading > 
+                             
+                             <div class="pull-left" title="{{category.description}}">{{category.title}}</div>
+							 <div class="text-right"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></div>
+
+                        </uib-accordion-heading>
+                        
+                       <!-- PRODUCTS -->
+                        
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in products[category.id]">
+                                <div><img src="../content/_media/img/products/{{product.img}}" style="width:50px;height:50px"></div>
+                                <h2>{{product.title}}</h2>
+                                <p style="min-height:100px;text-align: justify;" ng-bind-html="product.description"></p>
+                                <div style="margin-bottom:10px;">{{product.price | currency}} <!--<span ng-bind-html="currencySymbol"></span>--></div>
+                                    
+                                <div><a style = "cursor:pointer" ng-click="productToBasket(product.product_id,product.product_price_id)"><img src="../images/icons/cart_add.png"></a></div><br>		
+                                 <br><br>     
+                            </div>
+                             
+                        </div>    
+
+                       <!-- PRODUCTS -->  
+                            
+                    </uib-accordion-group>
+                      <uib-accordion-group is-open="basketStatus"> 
+                        <uib-accordion-heading > 
+                            <div class="text-left" id="top_basket"> 
+                                  <div class="pull-left">
+                                      <a><span>{{basketQuantity}}</span></a>  
+                                  </div>
+                                  <div class="text-right"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': basketStatus, 'glyphicon-chevron-right': !basketStatus}"></i></div>
+                                  
+                            </div>
+                        </uib-accordion-heading>
+
+                       <!-- BASKET -->
+                            <div class="row" ng-show="basketQuantity != 0">
+                               
+                                <div class="col-sm-12 table-responsive">
+
+                                      <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-left" style="width:90px">TITEL</th>
+                                                    <!--<th class="text-left">BILD</th>-->
+                                                    <th class="text-left hidden-xs" >BESCHREIBUNG</th>
+                                                    <th class="text-left" style="min-width:90px">PREIS</th>
+                                                    <th class="text-left" style="min-width:180px">MENGE</th>
+                                                    <th class="text-right" style="min-width:90px">SUMME</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="row in basketItems">
+                                                    <td class="text-left">{{row.product_title}}</td>
+                                                    <!--<td class="text-left"><img src="../img/products/{{row.product_image}}" style="width:50px;height:50px"></td>-->
+                                                    <td class="text-left hidden-xs" ng-bind-html="row.product_description"></td>
+                                                    <td class="text-left">{{row.price | currency }} </td>
+                                                    <td class="text-left">
+                                                        
+                                                        <div class="input-group" >
+                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-minus cursorPointer" ng-click="updateBasketProductQuantity(row,'-')"></i></span>
+                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-plus cursorPointer" ng-click="updateBasketProductQuantity(row,'+')"></i></span>
+                                                             <input type="text" class="form-control text-center" ng-model="row.quantity" readonly>
+                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-trash cursorPointer" ng-click="deleteBasketItem(row)"></i></span>
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td class="text-right">{{row.rowPrice | currency}} <!--<span ng-bind-html="currencySymbol"></span>--></td>
+                                                </tr>
+                                                 <tr>
+                                                        <td colspan="5" class="text-right"><strong>Gesamt netto (zzgl. MwSt)</strong>: {{totalPrice | currency}} </span> </td>
+                                                </tr>
+                                               
+                                            </tbody>        
+                                        </table>  
+                                                   
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10 text-left" style="padding-left:35px">
+                                            <label>
+                                            <input type="checkbox" ng-model="agb_accepted"> 
+                                            <span>Ich habe die <a href="#agb/{{lang}}/redirect/eShop"> AGB</a> gelesen und stimme hiermit zu</span>
+                                            </label>
+                                    </div>
+                                    <div class="col-sm-2 text-right"  style="padding-right:35px">
+                                        <button type="button" class="btn btn-default" ng-show="agb_accepted" ng-click="sendOrder()">Anfragen</button>
+                                    </div>
+                                </div>  
+                            </div>    
+                             <div class="row" ng-show="basketQuantity == 0">
+                                <div class="col-sm-12">
+                                    Ihr Warenkorb ist leer
+                                </div>    
+                             </div>
+  			  	      
+                        <!-- BASKET -->     
+
+                    </uib-accordion-group>                  
+                </uib-accordion>
+                
+
+            </div>
+           
+        </div>
+
+  </div>  	
+
+</div

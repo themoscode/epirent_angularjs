@@ -1,0 +1,20 @@
+ <!-- 1.IMAGE-->
+ <div style="height:{{row.gap_up}}px"></div>
+	<div class="sector1" style="background-image: url('../content/_media/img/cms/{{row.image}}');background-repeat: no-repeat;background-size: cover;background-position:center;height:{{row.image_height}}px;color: white;font-family: myriad-set-pro-thin;">
+		<div class="container-fluid text-center">
+            <br><br>
+            <div class="visible-xs"><br><br></div>
+
+            <h1 class="text1" ng-bind-html="row.title"></h1>     
+            <p ng-bind-html="row.subtitle"></p>
+			
+		</div>
+    
+
+        <div ng-include="'content/_cms/widgets/pageLink1.html'"></div>
+        <div ng-include="'content/_cms/widgets/videoLink2.html'"></div>
+        
+       
+	</div>
+  <div style="height:{{row.gap_down}}px"></div>
+  <!-- 1.IMAGE END-->

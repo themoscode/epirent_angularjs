@@ -1,0 +1,31 @@
+<br><br><br>
+<div class="news_page">
+	
+	  <div class="container text-center">
+	  
+	    	<h1 class="text1">Neuigkeiten rund um <br> Deine Software.</h1>      
+	  		
+			<dir-pagination-controls boundary-links="true"  template-url="js/libs/pagination/index.html"></dir-pagination-controls>
+
+			<div class="row" dir-paginate="row in news | itemsPerPage: pageSize" current-page="currentPage">
+	  		
+	  			<div class="col-sm-2"></div>
+	  			<div class="col-sm-8 text-left">
+	  			
+	  				<h1 class="text3b">{{twoDigits(row.day)}}/{{twoDigits(row.month)}}/{{row.year}}</h1>
+					
+	  				<h1 class="text4">{{row.title}}</h1>
+	  				<p ng-bind-html="row.html"></p>
+	  				<br>
+	  			</div>
+	  			<div class="col-sm-2"></div>
+	  			
+	  		</div>
+	  		
+			<dir-pagination-controls boundary-links="true"  template-url="js/libs/pagination/index.html"></dir-pagination-controls>  
+	  </div>
+	
+</div>
+<br><br><br>
+
+

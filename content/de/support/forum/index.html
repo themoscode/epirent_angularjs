@@ -1,0 +1,32 @@
+<div class="support_page forum">
+	<div ng-include="'content/de/support/_navigation/index.html'"></div>
+	<div class="sector1" >
+	  <div class="container text-center">
+	    
+				<div class="text1">
+					Das <span>epi</span>rent Forum.
+				</div>
+				<div class="text2">
+					Wir arbeiten zusammen.
+				</div>
+				<div class="text3">
+					In unserem Forum kannst Du Dich über unsere Software, Bedienung, Funktionen, Optimierung und vieles mehr austauschen.
+				</div>
+				<br>
+				<button type="button" class="btn btn-default button1" ng-click="goToForum()" >Auf gehts!</button>
+			
+	    
+        <form id="form_forum_login" action="https://forum.epi.rent/ucp.php?mode=login" method="post" target="_blank" style="display:none">
+																
+            <input type="hidden" name="username" value="{{userData.username}}" />
+            <input type="hidden" name="password" value="{{userData.sub_decoded}}" />
+            <input type="submit" name="login" id="submit_form_forum_login" class="btn btn-default button1" style="width:200px;" value="Forum"  />
+
+        </form>
+        
+
+	  </div>
+	</div>
+	
+</div>
+<br><br><br>

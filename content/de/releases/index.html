@@ -1,0 +1,31 @@
+
+<div class="releases_page">
+
+	<div class="container text-center">
+			<br><br><button class="btn btn-primary" type="button" ng-click="navigateTo('downloads/'+lang)">zu Downloads</button><br><br>
+			<h1 class="title1"><span>epi</span>rent</h1>
+			<h2 class="title2">Versionshistorie</h2>   
+			
+			<dir-pagination-controls boundary-links="true"  template-url="js/libs/pagination/index.html"></dir-pagination-controls>
+
+			
+			<div class="row" dir-paginate="row in releases | itemsPerPage: pageSize" current-page="currentPage">
+				
+			
+				<div class="col-sm-12 text-left">
+				
+					<h1 class="text3b">{{twoDigits(row.day)}}/{{twoDigits(row.month)}}/{{row.year}}</h1>
+					<!--<h1 class="text4">{{row.version_major}}.{{row.version_minor}}.{{row.build}}</h1>-->
+					<p ng-bind-html="row.text"></p>
+					<br>
+				
+				</div>
+				
+				
+			</div>
+			
+			<dir-pagination-controls boundary-links="true"  template-url="js/libs/pagination/index.html"></dir-pagination-controls>
+
+	</div>
+
+</div>

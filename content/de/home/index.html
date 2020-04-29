@@ -1,0 +1,333 @@
+
+<br><br>
+
+<div class="home_page">
+
+	<!-- USER LOGGED -->
+	
+	<div class="container" ng-show="userLogged">
+	
+		<h1 class="title1"><span>epi</span>rent</h1>
+		
+		<h2 class="title2 ">Mein Profil</h2>
+		<div class="row" ng-if="editProfile">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"><button type="button" class="btn btn-default button3" ng-click="editProfileStatus(false);">	zurück zum &nbsp;<span class="glyphicon glyphicon-home"></span></button></div>
+			<div class="col-sm-4"></div>
+		</div>
+		<br>
+    <br>
+		
+		<div ng-hide="editProfile">
+	
+				<div class="row">
+							
+							<div class="col-sm-6 text-center">
+								
+										<h2 style="font-family: myriad-set-pro-thin;font-size: 24px;"><strong>Meine Daten</strong></h2><br>
+										<div>
+											<div ng-if="userData.company">{{userData.company}}</div>
+										  <div ng-if="userData.name">{{userData.name}}</div>
+										  <div ng-if="userData.address">{{userData.address}}</div>
+											<div ng-if="userData.telephone">{{userData.telephone}}</div>
+											<div ng-if="userData.fax">{{userData.fax}}</div>
+										  <div ng-if="userData.email">{{userData.email}}</div>
+										  <div ng-if="userData.www">{{userData.www}}</div>
+										  <div ng-if="userData.country">{{userData.country}}</div>
+											
+									</div>
+									
+							</div>
+						
+							<div class="col-sm-6 text-center">
+												<br>		
+												<!--					
+												<button type="button" class="btn btn-default button1" style="width:200px;font-size:14px;height:auto" ng-click="navigateTo('downloads/'+lang)">Download</button><br><br>
+												<button type="button" class="btn btn-default button1" style="width:200px;font-size:14px;height:auto" ng-click="navigateTo('eshop/'+lang)">Shop</button><br><br>
+												<button type="button" class="btn btn-default button1" style="width:200px;font-size:14px;height:auto" disabled>Forum</button>-->
+												<div class="visible-xs">
+													<button type="button" class="btn btn-default button3" style="width:200px;font-size:14px;height:auto" ng-click="editProfileStatus(true);">
+														Profil bearbeiten
+													</button><br><br><br>
+												</div>
+												
+												<button type="button" class="btn btn-default button1" style="width:200px;" ng-click="navigateTo('downloads/'+lang)">Download</button><br><br>
+												<button type="button" class="btn btn-default button1" style="width:200px;" ng-click="navigateTo('eshop/'+lang)">Shop</button><br><br>
+												
+												<!--FORUM AKTIVIEREN  ng-hide="false"-->
+													<div ng-show="userData.usergroup == '2' || userData.usergroup == '9'" class="row">  <!-- kunde oder Admin -->
+
+
+																<div class="col-sm-2"></div>
+																<div class="col-sm-8">
+
+																	<form id="form_forum_login" action="https://forum.epi.rent/ucp.php?mode=login" method="post" target="_blank" ng-hide="is_forum_registered == false">
+																
+																				<input type="hidden" name="username" value="{{userData.username}}" />
+																				<input type="hidden" name="password" value="{{userData.sub_decoded}}" />
+																				<input type="submit" name="login" id="submit_form_forum_login" class="btn btn-default button1" style="width:200px;" value="Forum"  />
+																	
+																	</form>
+
+																	<form ng-submit="forum_form_register()" name="_registerForumForm" ng-show="is_forum_registered == false">
+																
+																			<div class="form-group" ng-class="{ 'has-error' : _registerForumForm.password.$invalid && !_registerForumForm.password.$pristine }">
+																				
+																				<input ng-hide="true" style="width:200px" type="password"  placeholder="Passwort" ng-model="registerForumForm.password" name="password" required >
+																				<p ng-show="_registerForumForm.password.$invalid && !_registerForumForm.password.$pristine" class="help-block text-left">geben Sie Ihr Passwort bitte ein</p>
+																			</div>
+																			
+																			<button type="submit" class="btn btn-default button3" ng-disabled="_registerForumForm.$invalid" style="max-width:200px">für Forum registrieren</button>
+																	</form>
+
+
+																</div>
+																<div class="col-sm-2"></div>
+
+
+													</div>
+												<!-- -->
+							</div>
+							
+				</div>
+				<br><br>
+				<div class="row">
+					<div class="col-sm-6 text-center">
+						    
+								<button type="button" class="btn btn-default button3 hidden-xs" style="width:200px;font-size:14px;height:auto" ng-click="editProfileStatus(true);">
+								Profil bearbeiten
+								</button>
+					</div>
+					<div class="col-sm-6 text-center">
+						 <!-- <div class="br_767"><br></div> -->
+							
+							<button type="button" class="btn btn-default button3" ng-click="logOutUser()" style="width:200px;font-size:14px;height:auto">Ausloggen</button>
+							<!--
+							<button type="button" class="btn btn-default button3" ng-click="logOutUser()" style="width:200px;height:48px;font-size:24px">Ausloggen</button>
+							-->
+					</div>
+				</div>
+    </div>
+
+		<div class="row" ng-show="editProfile">
+			
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4  text-left">
+							
+				<form ng-submit="myData_save_userdata()" name="_userDataForm">
+				    
+						<div class="form-group">
+				      
+				      <input type="text" class="form-control"  ng-model="userType" disabled>
+				    </div>
+						<div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="Benutzername" ng-model="userData.username" disabled>
+				    </div>
+				    <div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="Firma" ng-model="userData.company">
+				    </div>
+				    <div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="Name" ng-model="userData.name">
+				    </div>
+				    <div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="Adresse" ng-model="userData.address">
+				    </div>
+				    <div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="Telefon" ng-model="userData.telephone">
+				    </div>
+				    <div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="Fax" ng-model="userData.fax">
+				    </div>
+				    
+				    <div class="form-group" ng-class="{ 'has-error' : _userDataForm.email.$invalid && !_userDataForm.email.$pristine }">
+				      
+				      <input type="email" class="form-control"  placeholder="Mail" ng-model="userData.email" name="email" required>
+				      <p ng-show="_userDataForm.email.$invalid && !_userDataForm.email.$pristine" class="help-block text-left">Ihre email ist falsch.</p>
+				    </div>
+				    
+				    <div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="Country" ng-model="userData.country">
+				    </div>
+				    <div class="form-group">
+				      
+				      <input type="text" class="form-control"  placeholder="www" ng-model="userData.www">
+				    </div>
+				    
+				    <button type="submit" class="btn btn-default button3" ng-disabled="_userDataForm.$invalid">Änderung speichern</button>
+				</form>
+				
+				<hr>
+				
+				<form ng-submit="myData_save_pass()" name="_changePassForm">
+				    <div class="form-group" ng-class="{ 'has-error' : _changePassForm.password.$invalid && !_changePassForm.password.$pristine }">
+				      
+				      <input type="password" class="form-control"  placeholder="neues Passwort" ng-model="changePassForm.password" name="password" required>
+				      <p ng-show="_changePassForm.password.$invalid && !_changePassForm.password.$pristine" class="help-block text-left">geben Sie ein neues Passwort</p>
+				    </div>
+				    <div class="form-group" ng-class="{ 'has-error' : _changePassForm.password2.$invalid && !_changePassForm.password2.$pristine }">
+				      
+				      <input type="password" class="form-control"  placeholder="Passwort wiederholen." ng-model="changePassForm.password2" name="password2" required>
+				      
+				       <p ng-show="_changePassForm.password.$viewValue != _changePassForm.password2.$viewValue" class="help-block text-left">Passwort wiederholen bitte</p>
+				    </div>
+				   
+				    
+				    <button type="submit" class="btn btn-default button3" ng-disabled="_changePassForm.$invalid || (_changePassForm.password.$viewValue != _changePassForm.password2.$viewValue)">Änderung speichern</button>
+				</form>
+
+				<hr>
+				
+			</div>
+			<div class="col-sm-4"></div>
+					
+		</div>
+		
+		
+	</div>
+	
+	
+	<!-- USER UNLOGGED -->
+	
+	<div class="container" ng-hide="userLogged">
+		
+		<h1 class="title1"><span>epi</span>rent</h1>
+		<h2 class="title2">Login</h2>
+		
+		<br><br>
+		<h3 class="text3 text-center">Sie haben bereits ein Konto? Dann einfach einloggen!</h3>
+		
+		<!-- EINLOGGEN -->
+		<div class="row">
+			
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4  text-left">
+							
+				<form ng-submit="check_userLogged()" name="_loginForm">
+				    <div class="form-group" ng-class="{ 'has-error' : _loginForm.username.$invalid && !_loginForm.username.$pristine }">
+				      
+				      <input type="text" class="form-control"  placeholder="Benutzername" ng-model="loginForm.username" name="username" required>
+				      <p ng-show="_loginForm.username.$invalid && !_loginForm.username.$pristine" class="help-block text-left">Ihr Benutzername ist erforderlich.</p>
+				    </div>
+				    <div class="form-group" ng-class="{ 'has-error' : _loginForm.password.$invalid && !_loginForm.password.$pristine }">
+				      
+				      <input type="password" class="form-control"  placeholder="Passwort" ng-model="loginForm.password" name="password" required>
+				      <p ng-show="_loginForm.password.$invalid && !_loginForm.password.$pristine" class="help-block text-left">Ihr Kennwort ist erforderlich.</p>
+				    </div>
+				    
+				    <button type="submit" class="btn btn-default button3" ng-disabled="_loginForm.$invalid">Einloggen</button>
+				</form>
+				
+			</div>
+			<div class="col-sm-4"></div>
+					
+		</div>
+		
+		<br><br>
+		
+		<!-- PASSWORT VERGESSEN -->
+	
+		<div  class="row">
+			
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				
+				<div class="panel panel-default">
+					<div class="panel-heading cursorPointer" ng-click="showForgotPass = !showForgotPass">
+							
+							<div class="pull-left" >Passwort vergessen ?</div>
+			        <div class="text-right"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': showForgotPass, 'glyphicon-chevron-right': !showForgotPass}"></i></div>
+
+					</div>
+					<div class="panel-body" ng-show="showForgotPass">
+
+							<form ng-submit="check_forgotPassword()"  name="_forgotPasswordForm" >
+								<div class="form-group" ng-class="{ 'has-error' : _forgotPasswordForm.username.$invalid && !_forgotPasswordForm.username.$pristine }">
+									
+									<input type="text" class="form-control"  placeholder="Benutzername" ng-model="forgotPasswordForm.username" name="username" required>
+									<p ng-show="_forgotPasswordForm.username.$invalid && !_forgotPasswordForm.username.$pristine" class="help-block text-left">Ihr Benutzername ist erforderlich.</p>
+								</div>
+								<div class="form-group" ng-class="{ 'has-error' : _forgotPasswordForm.email.$invalid && !_forgotPasswordForm.email.$pristine }">
+									
+									<input type="email" class="form-control"  placeholder="email" ng-model="forgotPasswordForm.email" name="email" required>
+									<p ng-show="_forgotPasswordForm.email.$invalid && !_forgotPasswordForm.email.$pristine" class="help-block text-left">Ihre email ist falsch.</p>
+								</div>
+								
+								<button type="submit" class="btn btn-default button3" ng-disabled="_forgotPasswordForm.$invalid">Passwort anfordern</button>
+						</form>
+
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading cursorPointer" ng-click="showRegister = !showRegister">
+
+									<div class="pull-left" >Registrieren</div>
+			            <div class="text-right"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': showRegister, 'glyphicon-chevron-right': !showRegister}"></i></div>
+
+					</div>
+					<div class="panel-body" ng-show="showRegister">
+
+						<form ng-submit="check_register()"  name="_registerForm" >
+								<div class="form-group" ng-class="{ 'has-error' : _registerForm.name.$invalid && !_registerForm.name.$pristine }">
+									
+									<input type="text" class="form-control"  placeholder="Name" ng-model="registerForm.name" name="name" required>
+									<p ng-show="_registerForm.name.$invalid && !_registerForm.name.$pristine" class="help-block text-left">Ihr Name ist erforderlich.</p>
+								</div>
+								<div class="form-group" ng-class="{ 'has-error' : _registerForm.address.$invalid && !_registerForm.address.$pristine }">
+									
+									<input type="text" class="form-control"  placeholder="Adresse" ng-model="registerForm.address" name="address" required>
+									<p ng-show="_registerForm.address.$invalid && !_registerForm.address.$pristine" class="help-block text-left">Ihre Adresse ist erforderlich.</p>
+								</div>
+								<div class="form-group" ng-class="{ 'has-error' : _registerForm.email.$invalid && !_registerForm.email.$pristine }">
+									
+									<input type="email" class="form-control"  placeholder="email" ng-model="registerForm.email" name="email" required>
+									<p ng-show="_registerForm.email.$invalid && !_registerForm.email.$pristine" class="help-block text-left">Ihre email ist falsch.</p>
+								</div>
+								<div class="form-group" ng-class="{ 'has-error' : _registerForm.username.$invalid && !_registerForm.username.$pristine }">
+									
+									<input type="text" class="form-control"  placeholder="Benutzername" ng-model="registerForm.username" name="username" ng-trim="false" restrict-field="registerForm.username" required>
+									<p ng-show="_registerForm.username.$invalid && !_registerForm.username.$pristine" class="help-block text-left">Ihr Benutzername ist erforderlich.</p>
+								</div>
+
+								<!--
+								<div class="checkbox text-left" style="font-family: myriad-set-pro-thin;font-size: 15px;">
+									<label style="cursor:default"><input ng-model="registerForm.agreeTerms" type="checkbox" name ="agreeTerms" required>*Ich habe die <a  href="#dataProtection/{{lang}}" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere diese!</label>
+								</div>
+								<p ng-show="!registerForm.agreeTerms && !_registerForm.agreeTerms.$pristine" class="text-left" style="color: #a94442;">Bitte die Datenschutzerklärung lesen und akzeptieren </p>
+							-->
+								<div class="checkbox text-left" style="font-family: myriad-set-pro-thin;font-size: 15px;">
+									<label style="cursor:default"><input ng-model="registerForm.agreeAGB" type="checkbox" name ="agreeAGB" required>*Ich habe die <a  href="#agb/{{lang}}" target="_blank">AGBs</a> gelesen und akzeptiere diese!</label>
+								</div>
+								<p ng-show="!registerForm.agreeAGB && !_registerForm.agreeAGB.$pristine" class="text-left" style="color: #a94442;">Bitte die AGBs lesen und akzeptieren </p>
+							
+								<button type="submit" class="btn btn-default button3" ng-disabled="_registerForm.$invalid || !registerForm.agreeAGB">abschicken</button>
+						</form>
+
+					</div>
+				</div>
+       
+				
+				
+			
+			</div>
+			<div class="col-sm-4"></div>
+		
+		</div>
+			<br><br>	
+		<!-- REGISTRIEREN -->	
+	
+		
+	</div>
+	
+	
+</div>
+<br><br><br>
+
+

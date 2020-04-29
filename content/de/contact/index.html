@@ -1,0 +1,81 @@
+<div class="contact_page">
+	
+		<br><br><br><br>
+		
+		<img src="images/icons/epiLogo4.png">
+		<br><br>
+		<h1 class="text1">Wir melden uns umgehend<br> zurück!</h1>
+		<br>
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8  text-left">
+					<div class="text-justify" style="color:gray;font-size:13px">	Wir benötigen für Ihre Anfrage einige persönliche Angaben. Diese Felder sind entsprechend als Pflichtfelder eingerichtet *. Zur Erleichterung der Kontaktaufnahme mit Ihnen bitten wir Sie auch um Angabe Ihrer Telefonnummer.
+						Die von Ihnen eingegebenen Daten werden über unseren Providerserver per eMail an uns weitergeleitet und nach Beantwortung umgehend gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.
+						Wir nutzen Ihre Daten ausschließlich zu dem von Ihnen gewünschten Zweck bzw. für die Bearbeitung Ihrer Anfrage, eine Datenweitergabe an Dritte findet nicht statt.
+						Allgemeine Informationen zur Datenverarbeitung und zu Ihren Rechten finden Sie unter <a href="#dataProtection/de" target="_blank">https://epi.rent/datenschutz</a> . Bei Fragen wenden Sie sich an die EPI development, Langhansstraße 63, 13086 Berlin, Telefon: +49 (0) 30 4737272-0, oder unseren Datenschutzbeauftragten unter <a href="mailto:datenschutz@epi-dev.de">datenschutz@epi-dev.de</a> .</div>
+						<br>
+						<form ng-submit="submit_contactForm()" name="_contactForm">
+						<div class="form-group" >
+							<label class="text2a">Abteilung</label>
+							<select class="form-control" ng-model="contactForm.office" name="office" ng-disabled="disabledSelect">
+								<option value="support">Service</option>
+								<option value="sales">Vertrieb</option>
+							</select>
+						</div>
+							<div class="form-group" ng-class="{ 'has-error' : _contactForm.name.$invalid && !_contactForm.name.$pristine }">
+								<label class="text2a">Name*</label>
+								<input type="text" class="form-control" placeholder="Name" ng-model="contactForm.name" name="name" required>
+								<p ng-show="_contactForm.name.$invalid && !_contactForm.name.$pristine" class="help-block text-left">Ihr Name ist erforderlich.</p>
+							</div>
+							<div class="form-group" ng-class="{ 'has-error' : _contactForm.email.$invalid && !_contactForm.email.$pristine }">
+								<label class="text2a">Mail*</label>
+								<input type="email" class="form-control" placeholder="E-mail" ng-model="contactForm.email" name="email" required>
+								<p ng-show="_contactForm.email.$invalid && !_contactForm.email.$pristine" class="help-block text-left">Ihre email ist falsch.</p>
+							</div>
+							<div class="form-group" >
+								<label class="text2a">Telefon</label>
+								<input type="text" class="form-control" placeholder="Telefon" ng-model="contactForm.tel" name="tel" >
+							</div>
+							<div class="form-group" ng-class="{ 'has-error' : _contactForm.subject.$invalid && !_contactForm.subject.$pristine }">
+								<label class="text2a">Betreff*</label>
+								<input type="text" class="form-control" placeholder="Betreff" ng-model="contactForm.subject" name="subject" required>
+								<p ng-show="_contactForm.subject.$invalid && !_contactForm.subject.$pristine" class="help-block text-left">Betreff ist erforderlich.</p>
+							</div>
+							<div class="form-group" ng-class="{ 'has-error' : _contactForm.mailText.$invalid && !_contactForm.mailText.$pristine }">
+								<label class="text2a">Nachricht*</label>
+								
+								<textarea class="form-control" rows="5" placeholder="Nachricht" ng-model="contactForm.mailText" name="mailText" required></textarea>
+								
+								<p ng-show="_contactForm.mailText.$invalid && !_contactForm.mailText.$pristine" class="help-block text-left">Nachricht ist erforderlich.</p>
+							</div>
+							<div class="checkbox" >
+								<label style="cursor:default"><input ng-model="contactForm.agreeTerms" type="checkbox" name ="agreeTerms" required>*Ich habe die <a  href="#dataProtection/{{lang}}" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere diese!</label>
+							</div>
+							<p ng-show="!contactForm.agreeTerms && !_contactForm.agreeTerms.$pristine" class="text-left" style="color: #a94442;">Bitte die Datenschutzerklärung lesen und akzeptieren </p>
+							<!--
+							<div class="checkbox" >
+								<label style="cursor:default"><input ng-model="contactForm.agreeAGB" type="checkbox" name ="agreeAGB" required>*Ich habe die <a  href="#agb/{{lang}}" target="_blank">AGBs</a> gelesen und akzeptiere diese!</label>
+							</div>
+							<p ng-show="!contactForm.agreeAGB && !_contactForm.agreeAGB.$pristine" class="text-left" style="color: #a94442;">Bitte die AGBs lesen und akzeptieren </p>
+						-->
+							<div class="form-group" vc-recaptcha key="contactForm.publicKey" style="width:100px !important;"></div>
+						
+							
+													
+							<button type="submit" class="btn btn-default button3" ng-disabled="_contactForm.$invalid || !contactForm.agreeTerms">Abschicken</button>
+					</form>
+					<br>
+					<div style="font-size:13px;color:gray;">* Pflichtfelder</div>
+				</div>
+				<div class="col-sm-2"></div>
+				
+			</div>
+			
+		
+		</div>
+		
+		
+	</div>

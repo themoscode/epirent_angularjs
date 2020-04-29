@@ -1,0 +1,90 @@
+<div class="videos_page">
+	
+	<div class="sector1" >
+	  <div class="container-fluid text-center">
+	        <br><br>
+	        <div class="container">
+				
+				<div class="sector2 row hidden-xs">
+					
+					<div class="col-xs-3"><button type="button" class="btn btn-primary btn-lg b1" ng-click="startGallery('complete')">Komplett</button></div>
+					<div class="col-xs-3"><button type="button" class="btn btn-primary btn-lg b2" ng-click="startGallery('workflow')">Workflow</button></div>
+					<div class="col-xs-3"><button type="button" class="btn btn-primary btn-lg b3" ng-click="startGallery('usefulFunctions')">Nützliche Funktionen</button></div>
+					<div class="col-xs-3"><button type="button" class="btn btn-primary btn-lg b4" ng-click="startGallery('setUp')">Einrichtung</button></div>
+					
+				</div>
+				
+				<div class="row visible-xs">
+					<div class="col-xs-12">
+						
+						<div class="btn-group" uib-dropdown is-open="false">
+							<button type="button" class="btn btn-primary btn-lg" uib-dropdown-toggle ng-disabled="disabled">
+							  Videokategorien <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+							  <li role="menuitem"><a class="cursorPointer text-center" ng-click="startGallery('complete')" ng-class="{'active-category': playlistName=='complete'}">KOMPLETT</a></li>
+							  <li role="menuitem"><a class="cursorPointer text-center" ng-click="startGallery('workflow')" ng-class="{'active-category': playlistName=='workflow'}">WORKFLOW</a></li>
+							  <li role="menuitem"><a class="cursorPointer text-center" ng-click="startGallery('usefulFunctions')" ng-class="{'active-category': playlistName=='usefulFunctions'}">NÜTZLICHE FUNKTIONEN</a></li>
+							  <li role="menuitem"><a class="cursorPointer text-center" ng-click="startGallery('setUp')" ng-class="{'active-category': playlistName=='setUp'}">EINRICHTUNG</a></li>
+							</ul>
+						</div>
+		
+					</div>
+					
+				</div>
+				<div ng-show="showGallery">
+					<div class="row hidden-xs">
+							
+							<div class="col-xs-3"><i class="fa fa-caret-down playlist-pointer" ng-show="playlistName=='complete'" ></i></div>
+							<div class="col-xs-3"><i class="fa fa-caret-down playlist-pointer" ng-show="playlistName=='workflow'" ></i></div>
+							<div class="col-xs-3"><i class="fa fa-caret-down playlist-pointer" ng-show="playlistName=='usefulFunctions'" ></i></div>
+							<div class="col-xs-3"><i class="fa fa-caret-down playlist-pointer" ng-show="playlistName=='setUp'" ></i></div>
+							
+					</div>	
+					<div style="height:43px" class="visible-xs"></div>
+					<div class="vid-main-wrapper" >
+							
+						<div class="row">
+							<div ng-class="{'col-sm-12': playlistName=='complete', 'col-sm-8': playlistName!='complete'}">
+								<!--<div class="embed-responsive embed-responsive-16by9">-->
+									<youtube-video class="embed-responsive-item" video-id="youtubePlayer.videoId" player="youtubePlayer.player" player-vars="youtubePlayer.vars" player-width="'100%'" player-height="'375px'"></youtube-video>
+								<!--</div>-->
+							</div>
+							<div class="vid-list-container col-sm-4" ng-if="playlistName!='complete'" id="vid-list-container">
+									<ol id="vid-list">
+												<li ng-repeat="row in currentPlaylist" class="cursorPointer"  >
+													<a ng-click="playVideo($index)" ng-class="{'active-video-item': $index==playlistIndex, 'inactive-video-item': $index!=playlistIndex}">
+														<span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/{{row.id}}/default.jpg" /></span>
+														<div class="vid-title">{{row.title}}</div>
+													</a>
+												</li>
+												
+									</ol>
+							</div>
+						
+						</div>
+					
+					</div>
+				</div>
+				
+
+			</div>
+			<div ng-if="!showGallery">
+				<br><br>
+				<h1>entdecke <span>epi</span>rent.</h1>
+				<br><br>
+				<p>
+					Lerne die Effektivität von <span>epi</span>rent kennen.<br>
+					Strukturiere Dein Unternehmen und schaffe Transparenz.<br><br>
+					Unsere Videos haben einen hohen Lerneffekt und können <br>
+					optimal für die einzelnen Bereiche im Unternehmen <br>
+					eingesetzt werden.
+				</p>
+				<br>
+			</div>
+			
+	  </div>
+	</div>
+	
+</div>
+<br><br><br>

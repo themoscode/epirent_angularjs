@@ -1,0 +1,63 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="images/icons/epiLogo.png"></a>
+     
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+        
+        <ul class="nav navbar-nav hidden-xs">
+          <li ng-class="{ active: isNavMenuItemActive('/overview/{{lang}}')}"><a href="#overview/{{lang}}">ÜBERSICHT</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/products/epirent/{{lang}}') || isNavMenuItemActive('/products/epimobile/{{lang}}') || isNavMenuItemActive('/products/extensions/{{lang}}') || isNavMenuItemActive('/products/service_support/{{lang}}') || isNavMenuItemActive('/products/start/{{lang}}') || isNavMenuItemActive('/products/cloud/{{lang}}') }"><a href="#products/epirent/{{lang}}">PRODUKTE</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/eshop/{{lang}}')}"><a href="#eshop/{{lang}}">SHOP</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/downloads/{{lang}}')}"><a href="#downloads/{{lang}}">DOWNLOADS</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/videos/{{lang}}')}"><a href="#videos/{{lang}}">VIDEOS</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/support/{{lang}}') || isNavMenuItemActive('/support/{{lang}}') || isNavMenuItemActive('/support/guidance/{{lang}}') || isNavMenuItemActive('/support/forum/{{lang}}') }"><a href="#support/{{lang}}">SUPPORT</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/news/{{lang}}')}"><a href="#news/{{lang}}">NEWS</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/company/{{lang}}')}"><a href="#company/{{lang}}">COMPANY</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/contact_guide/{{lang}}')}"><a href="#contact_guide/{{lang}}">KONTAKT</a></li>
+          <li ng-class="{ active: isNavMenuItemActive('/home/{{lang}}')}"><a href="#home/{{lang}}"><span class="glyphicon glyphicon-home" ></span></a></li>
+          <li><a href="https://de-de.facebook.com/EPIdev/" target="_blank"><span class="fa fa-facebook-official"></span></a></li>
+          <li><a href="https://www.instagram.com/epidevelopment/" target="_blank"><span class="fa fa-instagram"></span></a></li>
+        </ul>
+        <div class="row visible-xs">
+	        <div class="col-xs-4"></div>
+	        <div class="col-xs-4">
+	        	<br>
+	        	<ul class="nav navbar-nav text-center">
+	        	  <li ng-class="{ active: isNavMenuItemActive('/overview/{{lang}}')}"><a href="#overview/{{lang}}" data-toggle="collapse" data-target="#myNavbar">ÜBERSICHT</a></li>
+	        	  <li ng-class="{ active: isNavMenuItemActive('/products/epirent/{{lang}}') || isNavMenuItemActive('/products/epimobile/{{lang}}') || isNavMenuItemActive('/products/extensions/{{lang}}') || isNavMenuItemActive('/products/service_support/{{lang}}') || isNavMenuItemActive('/products/start/{{lang}}') || isNavMenuItemActive('/products/cloud/{{lang}}') }"><a href="#products/epirent/{{lang}}" data-toggle="collapse" data-target="#myNavbar">PRODUKTE</a></li>
+              <li ng-class="{ active: isNavMenuItemActive('/eshop/{{lang}}')}"><a href="#eshop/{{lang}}" data-toggle="collapse" data-target="#myNavbar">SHOP</a></li>
+              <li ng-class="{ active: isNavMenuItemActive('/downloads/{{lang}}')}"><a href="#downloads/{{lang}}" data-toggle="collapse" data-target="#myNavbar">DOWNLOADS</a></li>
+              <li ng-class="{ active: isNavMenuItemActive('/videos/{{lang}}')}"><a href="#videos/{{lang}}" data-toggle="collapse" data-target="#myNavbar">VIDEOS</a></li>
+	        	  <li ng-class="{ active: isNavMenuItemActive('/support/{{lang}}') || isNavMenuItemActive('/support/{{lang}}') || isNavMenuItemActive('/support/guidance/{{lang}}') || isNavMenuItemActive('/support/forum/{{lang}}') }"><a href="#support/{{lang}}" data-toggle="collapse" data-target="#myNavbar">SUPPORT</a></li>
+	        	  <li ng-class="{ active: isNavMenuItemActive('/news/{{lang}}')}"><a href="#news/{{lang}}" data-toggle="collapse" data-target="#myNavbar">NEWS</a></li>
+	        	  <li ng-class="{ active: isNavMenuItemActive('/company/{{lang}}')}"><a href="#company/{{lang}}" data-toggle="collapse" data-target="#myNavbar">COMPANY</a></li>
+	        	  <li ng-class="{ active: isNavMenuItemActive('/contact_guide/{{lang}}')}"><a href="#contact_guide/{{lang}}" data-toggle="collapse" data-target="#myNavbar">KONTAKT</a></li>
+	        	  <li ng-class="{ active: isNavMenuItemActive('/home/{{lang}}')}"><a href="#home/{{lang}}" data-toggle="collapse" data-target="#myNavbar"><span class="glyphicon glyphicon-home" ></a></li>
+              <li><a href="https://de-de.facebook.com/EPIdev/" target="_blank" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true"><span class="fa fa-facebook-official"></span></a></li>
+	            <li><a href="https://www.instagram.com/epidevelopment/" target="_blank" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true"><span class="fa fa-instagram"></span></a></li>
+	        	</ul>
+	          <br><br>
+	        </div>
+	        <div class="col-xs-4"></div>
+           
+	    </div>  
+	     
+       
+    </div>
+  </div>
+  <!--
+  <div class="visible-xs text-center homeButtonMobile" >
+  	<span class="glyphicon glyphicon-home cursorPointer" ng-class="{ active: isNavMenuItemActive('/home/{{lang}}')}" ng-click="navigateTo('home/'+lang)" data-toggle="collapse" data-target="#myNavbar"></span>
+  	<br>
+  </div>
+  -->
+ 
+</nav>

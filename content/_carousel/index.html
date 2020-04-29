@@ -1,0 +1,31 @@
+
+<div ng-controller="carouselController">
+	<div uib-carousel active="active" interval="myInterval" no-wrap="false" >
+		<div uib-slide ng-repeat="slide in slides" index="$index" >
+			
+				<div class="overview_page">
+					<div class="sector1 myCarousel" style="background-image: url('../content/_media/img/slides/{{slide.image}}');">
+						<div class="container-fluid text-center" style="color:{{slide.color}}">
+							<br><br><br>
+							<!--
+							<h1><span>epi</span>rent V</h1>      
+							<p>die effektivste rental business software</p>
+							-->
+							<h1 ng-bind-html="slide.title"></h1>      
+							<p ng-bind-html="slide.subtitle"></p>
+							<br>
+							<button type="button" ng-hide="slide.linkPageURL == 'none'" class="btn btn-default button1" ng-click="gotoURL(slide.linkPageURL)" style="color:{{slide.linkColor}};border-color:{{slide.linkColor}}">{{slide.linkPageText}}</button>
+							<div ng-show="slide.video">
+								<br>
+								<span class="glyphicon glyphicon-play-circle playButton" ng-controller="videoPopupCtrl" ng-click="open(slide.video)" style="font-size:60px;color:{{slide.videoLinkColor}}"></span>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+		</div>
+	</div>
+</div
+
+

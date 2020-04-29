@@ -1,0 +1,46 @@
+<div class="container-fluid hidden-xs" style="padding:0px">
+    <div class="text-center icons_group">
+        <div class="left cursorPointer" ng-class="{ active1: isNavMenuItemActive('/products/epirent/{{lang}}')}" ng-click="navigateTo('products/epirent/'+lang)"><img src="images/products/epirent_icon.png" style="width: 48px;"><div class="br"></div>epirent</div>
+        <div class="left cursorPointer" ng-class="{ active1: isNavMenuItemActive('/products/epimobile/{{lang}}')}" ng-click="navigateTo('products/epimobile/'+lang)"><img src="images/products/epimobile_icon.png"><div class="br"></div>epirent mobile</div>
+        <div class="left cursorPointer" ng-class="{ active1: isNavMenuItemActive('/products/cloud/{{lang}}')}" ng-click="navigateTo('products/cloud/'+lang)"><img src="images/products/epirentcloud-icon.png"><div class="br"></div>epirent cloud</div>
+        <div class="cursorPointer" ng-class="{ active1: isNavMenuItemActive('/products/extensions/{{lang}}')}" ng-click="navigateTo('products/extensions/'+lang)"><img src="images/products/extensions_icon.png"><div class="br"></div>Erweiterungen</div>
+        <div class="right cursorPointer" ng-class="{ active1: isNavMenuItemActive('/products/service_support/{{lang}}')}" ng-click="navigateTo('products/service_support/'+lang)"><img src="images/products/service_support_icon.png"><div class="br"></div>Service &amp; Support</div>
+        <div class="right cursorPointer" ng-class="{ active1: isNavMenuItemActive('/products/start/{{lang}}')}" ng-click="navigateTo('products/start/'+lang)"><img src="images/products/start_icon.png"><div class="br"></div>Dein Start</div>
+        
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse visible-xs" style="background: #414141;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar_products" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <div style="color: white;margin-top: 15px;margin-left: 55px;font-size: 20px;" class="bold">PRODUKTE</div>
+      </div>
+      <div class="navbar-collapse collapse" id="myNavbar_products" aria-expanded="false" style="height: 1px;">
+          <div class="row">
+             
+              <div class="col-xs-12">
+                  <br>
+                  <ul class="nav navbar-nav text-center">
+                    <li ng-class="{ active: isNavMenuItemActive('/products/epirent/{{lang}}')}"><a href="#products/epirent/{{lang}}" data-toggle="collapse" data-target="#myNavbar_products" class="collapsed" aria-expanded="false">EPIRENT</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/products/epimobile/{{lang}}')}"><a href="#products/epimobile/{{lang}}" data-toggle="collapse" data-target="#myNavbar_products" class="collapsed" aria-expanded="false">EPIRENT MOBILE</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/products/cloud/{{lang}}')}"><a href="#products/cloud/{{lang}}" data-toggle="collapse" data-target="#myNavbar_products" class="collapsed" aria-expanded="false">EPIRENT CLOUD</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/products/extensions/{{lang}}')}"><a href="#products/extensions/{{lang}}" data-toggle="collapse" data-target="#myNavbar_products" class="collapsed" aria-expanded="false">ERWEITERUNGEN</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/products/service_support/{{lang}}')}"><a href="#products/service_support/{{lang}}" data-toggle="collapse" data-target="#myNavbar_products" class="collapsed" aria-expanded="false">SERVICE &amp; SUPPORT</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/products/start/{{lang}}')}"><a href="#products/start/{{lang}}" data-toggle="collapse" data-target="#myNavbar_products" class="collapsed" aria-expanded="false">DEIN START</a></li>
+                    
+                  </ul>
+                <br><br>
+              </div>
+             
+             
+          </div>  
+           
+         
+      </div>
+    </div>
+  </nav>

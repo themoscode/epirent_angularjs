@@ -1,0 +1,619 @@
+<br><br>
+<div class="downloads_page ">
+	<div class="container hidden-xs">
+		<h1 class="title1"><span>epi</span>rent</h1>
+		<h2 class="title2">Downloads</h2>
+	
+		<br><br>
+		<div class="row">
+			<div class="col-sm-4">
+				
+				<img src="images/icons/apple.png" class="img-center">
+				<h1 class="text1">Mac OS X</h1>
+				<p class="text3">
+						
+						
+						Ab macOS 10.10 Yosemite und höher<br>
+						CPU: Intel Core i5 2 GHz oder schneller <br>
+						RAM: 4GB, empfohlen 8GB oder mehr
+					
+				</p>
+			
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				
+				<img src="images/icons/windows.png" class="img-center">
+				<h1 class="text1">Windows</h1>
+				<p class="text3">
+						
+						
+						Ab Windows 7 und höher<br>
+						CPU: Intel Core i5 2 GHz oder schneller <br>
+						RAM: 4GB, empfohlen 8GB oder mehr
+					
+				</p>
+				
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4" ng-controller="textPopupCtrl">
+				<button  type="button" class="btn btn-default button1"  ng-click="navigateTo('systemRequirements/'+lang)">Systemvoraussetzungen</button>
+				<br><br>
+				<button  type="button" class="btn btn-default button1"  ng-click="navigateTo('releases/'+lang)">Versionshistorie</button>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+		<br>		
+		<div class="row">
+			<div class="col-sm-4"><a  class="btn btn-default button2" ng-click="openEpiDemoPopup('mac')">epirent DEMO</a></div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"><a  class="btn btn-default button2" ng-click="openEpiDemoPopup('windows')">epirent DEMO</a></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4"><a  class="btn btn-default button2" href="_epidownloads/hd/EPI_Helpdesk.zip">epi Helpdesk</a></div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"><a  class="btn btn-default button2" href="_epidownloads/hd/EPI_Helpdesk.exe">epi Helpdesk</a></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirent_5.dmg">epirent 5 Einzelplatz</a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Einzelplatz <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirent_5.zip">epirent 5 Einzelplatz </a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Einzelplatz <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+			
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentClient_5.dmg">epirent 5 Client </a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Client <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Client <div style="font-size:16px">(Login)</div></a>	
+
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentClient_5.zip">epirent 5 Client </a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Client <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+				
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Client <div style="font-size:16px">(Login)</div></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5.dmg">epirent 5 Server.64bit </a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.64bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.64bit <div style="font-size:16px">(Login)</div></a>
+			
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5.zip">epirent 5 Server.64bit</a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.64bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+
+				
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.64bit <div style="font-size:16px">(Login)</div></a>
+			
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5_32bit.dmg">epirent 5 Server.32bit</a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.32bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.32bit <div style="font-size:16px">(Login)</div></a>
+			
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+
+				<div ng-if="userLogged">
+					<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5_32bit.zip">epirent 5 Server.32bit</a>
+					<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.32bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+				</div>
+
+				<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.32bit <div style="font-size:16px">(Login)</div></a>
+			
+			</div>
+		</div>
+
+		<br>	
+		<h1 class="cursorPointer" data-toggle="collapse" data-target="#moreToolsDesktop" style="color:#97CCF7" ng-click="show_moreToolsDesktop=!show_moreToolsDesktop">Mehr Tools.<i style="font-size:20px;margin-left:10px" class="glyphicon" ng-class="{'glyphicon-chevron-down': show_moreToolsDesktop, 'glyphicon-chevron-right': !show_moreToolsDesktop}"></i></h1>	
+		
+		
+		<div id="moreToolsDesktop" class="collapse">
+				<div class="row">
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/pdf/pdftk_server-2.02-mac_osx-10.6-setup.pkg">PDFtk Server 2.02 bis macOS 10.10. "Yosemite"</a></div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/pdf/PDFCreator-1_7_3_setup.exe">PDFCreator 1.7.3 Windows</a></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/pdf/pdftk_server-2.02-mac_osx-10.11-setup.pkg">PDFtk Server 2.02 ab macOS 10.11. "El Capitan"</a></div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/pdf/pdftk_server-2.02-win-setup.exe">PDFtk 2.02 Windows</a></div>
+				</div>
+		</div>
+		
+		<h1 class="cursorPointer" data-toggle="collapse" data-target="#oldVersionsDesktop" style="color:#97CCF7" ng-click="show_oldVersionsDesktop=!show_oldVersionsDesktop">Ältere Versionen.<i style="font-size:20px;margin-left:10px" class="glyphicon" ng-class="{'glyphicon-chevron-down': show_oldVersionsDesktop, 'glyphicon-chevron-right': !show_oldVersionsDesktop}"></i></h1>
+		
+	
+		<div id="oldVersionsDesktop" class="collapse">
+		
+				<div class="row">
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirent_4.dmg">epirent 4 Einzelplatz</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Einzelplatz <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+					
+					</div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirent_4.zip">epirent 4 Einzelplatz</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Einzelplatz <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentClient_4.dmg">epirent 4 Client</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Client <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Client <div style="font-size:16px">(Login)</div></a>
+					</div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentClient_4.zip">epirent 4 Client</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Client <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Client <div style="font-size:16px">(Login)</div></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4.dmg">epirent 4 Server.64bit</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.64bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.64bit <div style="font-size:16px">(Login)</div></a>
+
+					</div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4.zip">epirent 4 Server.64bit</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.64bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.64bit <div style="font-size:16px">(Login)</div></a>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4_32bit.dmg">epirent 4 Server.32bit</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.32bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.32bit <div style="font-size:16px">(Login)</div></a>
+
+					</div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4_32bit.zip">epirent 4 Server.32bit</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.32bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.32bit <div style="font-size:16px">(Login)</div></a>
+
+					</div>
+				</div>
+			     <div class="row">
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/3/epirent_324.dmg">epirent 3.2.4 Einzelplatz</a></div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/3/epirent_324.zip">epirent 3.2.4 Einzelplatz</a></div>
+				</div> 
+				<div class="row">
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/3/epirentServer_324.dmg">epirent 3.2.4 Server</a></div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/3/epirentServer_324.zip">epirent 3.2.4 Server</a></div>
+				</div> 
+				<div class="row">
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/3/epirentClient_3.dmg">epirent 3 Client</a></div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><a class="btn btn-default button2" href="_epidownloads/3/epirentClient_3.zip">epirent 3 Client</a></div>
+				</div>
+		
+		</div>
+	</div>
+		
+	
+	<!-- MOBILE VIEW -->
+	<div class="container visible-xs">
+		<h1 class="title1"><span>epi</span>rent</h1>
+		<h2 class="title2">Downloads</h2>
+	     
+		<br>
+		<div class="row">
+			
+			<div class="col-sm-12" ng-controller="textPopupCtrl">
+				<button  type="button" class="btn btn-default button1"  ng-click="navigateTo('systemRequirements/'+lang)">Systemvoraussetzungen</button>
+				<br><br>
+				<button  type="button" class="btn btn-default button1" ng-click="navigateTo('releases/'+lang)">Versionshistorie</button>
+			</div>
+			
+		</div>
+		
+		<br>
+		<div class="row">
+			<div class="col-xs-5">
+				
+				<img src="images/icons/apple.png" class="img-center OS_mobile cursorPointer" ng-click="showMac=true">
+				
+			
+			</div>
+			<div class="col-xs-2"><br><br>oder</div>
+			<div class="col-xs-5">
+				
+				<img src="images/icons/windows.png" class="img-center OS_mobile cursorPointer" ng-click="showMac=false">
+				
+				
+			</div>
+		</div>
+		
+			<div ng-show="showMac"> <!-- mobile curr Mac -->
+				<h1 class="text1">Mac OS X</h1>
+				<hr>
+				<div class="row">
+					<div class="col-sm-12"><a class="btn btn-default button2" ng-click="openEpiDemoPopup('mac')">epirent DEMO</a></div>
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/hd/EPI_Helpdesk.zip">epi Helpdesk</a></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirent_5.dmg">epirent 5 Einzelplatz </a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Einzelplatz <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentClient_5.dmg">epirent 5 Client</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Client <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Client <div style="font-size:16px">(Login)</div></a>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5.dmg">epirent 5 Server.64bit</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.64bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.64bit <div style="font-size:16px">(Login)</div></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						
+						<div ng-if="userLogged">
+							<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5_32bit.dmg">epirent 5 Server.32bit</a>
+							<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.32bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.32bit <div style="font-size:16px">(Login)</div></a>
+					</div>
+				</div>
+				
+				
+				<h1 class="cursorPointer h1_downloads" data-toggle="collapse" data-target="#moreToolsMobileMac" style="color:#97CCF7" ng-click="show_moreToolsMobileMac=!show_moreToolsMobileMac">Mehr Tools.<i style="font-size:20px;margin-left:10px" class="glyphicon" ng-class="{'glyphicon-chevron-down': show_moreToolsMobileMac, 'glyphicon-chevron-right': !show_moreToolsMobileMac}"></i></h1>	
+				
+				<div id="moreToolsMobileMac" class="collapse">
+					<div class="row">
+						<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/pdf/pdftk_server-2.02-mac_osx-10.6-setup.pkg">PDFtk Server 2.02 bis macOS 10.10. "Yosemite"</a></div>	
+					</div>
+					<div class="row">
+						<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/pdf/pdftk_server-2.02-mac_osx-10.11-setup.pkg">PDFtk Server 2.02 ab macOS 10.11. "El Capitan"</a></div>
+					</div>
+				</div>
+				
+				<h1 class="cursorPointer h1_downloads" data-toggle="collapse" data-target="#oldVersionsMobileMac" style="color:#97CCF7" ng-click="show_oldVersionsMobileMac=!show_oldVersionsMobileMac">Ältere Versionen.<i style="font-size:20px;margin-left:10px" class="glyphicon" ng-class="{'glyphicon-chevron-down': show_oldVersionsMobileMac, 'glyphicon-chevron-right': !show_oldVersionsMobileMac}"></i></h1>
+
+
+				<div id="oldVersionsMobileMac" class="collapse"> <!-- mobile old mac -->
+						<div class="row">
+							<div class="col-sm-12">
+								
+								<div ng-if="userLogged">
+									<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirent_4.dmg">epirent 4 Einzelplatz</a>
+									<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Einzelplatz<div style="font-size:16px">(nur mit Lizenz)</div></a>
+								</div>
+
+								
+								<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+							
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								
+								<div ng-if="userLogged">
+									<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentClient_4.dmg">epirent 4 Client</a>
+									<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Client<div style="font-size:16px">(nur mit Lizenz)</div></a>
+								</div>
+
+								
+								<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Client <div style="font-size:16px">(Login)</div></a>
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								
+								<div ng-if="userLogged">
+									<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4.dmg">epirent 4 Server.64bit</a>
+									<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.64bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+								</div>
+
+
+								<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.64bit <div style="font-size:16px">(Login)</div></a>
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								
+								<div ng-if="userLogged">
+									<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4_32bit.dmg">epirent 4 Server.32bit</a>
+									<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.32bit<div style="font-size:16px">(nur mit Lizenz)</div></a>
+								</div>
+
+								
+								<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.32bit <div style="font-size:16px">(Login)</div></a>
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/3/epirent_324.dmg">epirent 3.2.4 Einzelplatz</a></div>
+							
+						</div>
+						<div class="row">
+							<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/3/epirentServer_324.dmg">epirent 3.2.4 Server</a></div>
+							
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/3/epirentClient_3.dmg">epirent 3 Client</a></div>
+							
+						</div>
+				</div>
+
+			</div>
+
+			
+
+			<div ng-hide="showMac">  <!-- mobile curr Windows -->
+				<h1 class="text1">Windows</h1>
+				<hr>
+				<div class="row">
+					<div class="col-sm-12"><a class="btn btn-default button2" ng-click="openEpiDemoPopup('windows')">epirent DEMO</a></div>
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/hd/EPI_Helpdesk.exe">epi Helpdesk</a></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						
+						<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirent_5.zip">epirent 5 Einzelplatz</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Einzelplatz <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						
+						<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentClient_5.zip">epirent 5 Client</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Client <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Client <div style="font-size:16px">(Login)</div></a>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						
+						<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5.zip">epirent 5 Server.64bit</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.64bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.64bit <div style="font-size:16px">(Login)</div></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						
+						<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/5/epirentServer_5_32bit.zip">epirent 5 Server.32bit</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 5 Server.32bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						</div>
+
+						
+						<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 5 Server.32bit <div style="font-size:16px">(Login)</div></a>
+					</div>
+				</div>
+					
+				<h1 class="cursorPointer h1_downloads" data-toggle="collapse" data-target="#moreToolsMobileWindows" style="color:#97CCF7" ng-click="show_moreToolsMobileWindows=!show_moreToolsMobileWindows">Mehr Tools.<i style="font-size:20px;margin-left:10px" class="glyphicon" ng-class="{'glyphicon-chevron-down': show_moreToolsMobileWindows, 'glyphicon-chevron-right': !show_moreToolsMobileWindows}"></i></h1>
+				
+				
+				<div id="moreToolsMobileWindows" class="collapse">
+
+					<div class="row">
+					<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/pdf/PDFCreator-1_7_3_setup.exe">PDFCreator 1.7.3 Windows</a></div>
+					
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/pdf/pdftk_server-2.02-win-setup.exe">PDFtk Server 2.02 Windows</a></div>
+						
+					</div>
+
+				</div>
+				<h1 class="cursorPointer h1_downloads" data-toggle="collapse" data-target="#oldVersionsMobileWindows" style="color:#97CCF7" ng-click="show_oldVersionsMobileWindows=!show_oldVersionsMobileWindows">Ältere Versionen.<i style="font-size:20px;margin-left:10px" class="glyphicon" ng-class="{'glyphicon-chevron-down': show_oldVersionsMobileWindows, 'glyphicon-chevron-right': !show_oldVersionsMobileWindows}"></i></h1>
+				
+				<div id="oldVersionsMobileWindows" class="collapse"><!-- mobile old windows -->
+
+					<div class="row">
+						<div class="col-sm-12">
+							
+							<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirent_4.zip">epirent 4 Einzelplatz</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Einzelplatz <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						   </div>
+
+							
+							<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Einzelplatz <div style="font-size:16px">(Login)</div></a>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							
+							<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentClient_4.zip">epirent 4 Client</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Client <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						   </div>
+
+							
+							<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Client <div style="font-size:16px">(Login)</div></a>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							
+							<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4.zip">epirent 4 Server.64bit</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.64bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						   </div>
+
+							
+							<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.64bit <div style="font-size:16px">(Login)</div></a>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							
+							<div ng-if="userLogged">
+								<a ng-if="userCanDownload" class="btn btn-default button2" href="_epidownloads/4/epirentServer_4_32bit.zip">epirent 4 Server.32bit</a>
+								<a ng-if="!userCanDownload" class="btn btn-default button2" href="" ng-click="msg()">epirent 4 Server.32bit <div style="font-size:16px">(nur mit Lizenz)</div></a>
+						    </div>
+
+							
+							<a ng-if="!userLogged" class="btn btn-default button2" href="" ng-click="redirect()">epirent 4 Server.32bit <div style="font-size:16px">(Login)</div></a>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/3/epirent_324.zip">epirent 3.2.4 Einzelplatz</a></div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/3/epirentServer_324.zip">epirent 3.2.4 Server</a></div>
+						
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12"><a class="btn btn-default button2" href="_epidownloads/3/epirentClient_3.zip">epirent 3 Client</a></div>
+						<br><br><br>
+					</div>
+			
+          
+
+				</div>
+			</div>
+	</div>
+	
+</div>

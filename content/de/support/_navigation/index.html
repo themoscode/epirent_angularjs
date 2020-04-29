@@ -1,0 +1,40 @@
+<div class="container-fluid hidden-xs" style="padding:0px">
+    <div class="text-center icons_group">
+        <div class="left cursorPointer" ng-class="{ active1: isNavMenuItemActive('/support/'+lang)}" ng-click="navigateTo('support/'+lang)"><img src="images/icons/knowledgeBase.png" style="width: 48px;"><div class="br"></div>Knowledge Base</div>
+        <div class="left cursorPointer" ng-class="{ active1: isNavMenuItemActive('/support/guidance/'+lang)}" ng-click="navigateTo('support/guidance/'+lang);"><img src="images/icons/Anleitung.png"><div class="br"></div>Anleitung</div>
+        <div class="left cursorPointer" ng-class="{ active1: isNavMenuItemActive('/support/forum/'+lang)}" ng-click="navigateTo('support/forum/'+lang)"><img src="images/icons/forum.png"><div class="br"></div>Forum</div>
+        <div style="margin-right: 25px;" class="cursorPointer" ng-class="{ active1: isNavMenuItemActive('/contact/support/'+lang)}" ng-click="navigateTo('contact/support/'+lang)"><img src="images/icons/kontaktService.png"><div class="br"></div>Kontakt Service</div>
+      </div>
+</div>
+
+<nav class="navbar navbar-inverse visible-xs" style="background: #414141;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar_support" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <div style="color: white;margin-top: 15px;margin-left: 55px;font-size: 20px;" class="bold">SUPPORT</div>
+      </div>
+      <div class="navbar-collapse collapse" id="myNavbar_support" aria-expanded="false" style="height: 1px;">
+          <div class="row">
+             
+              <div class="col-xs-12">
+                  <br>
+                  <ul class="nav navbar-nav text-center">
+                    <li ng-class="{ active: isNavMenuItemActive('/support/'+lang)}"><a href="#support/{{lang}}"  data-toggle="collapse" data-target="#myNavbar_support" class="collapsed" aria-expanded="false">KNOWLEDGE BASE</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/support/guidance/'+lang)}"><a href="#support/guidance/{{lang}}"  data-toggle="collapse" data-target="#myNavbar_support" class="collapsed" aria-expanded="false">ANLEITUNG</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/support/forum/'+lang)}"><a href="#support/forum/{{lang}}"  data-toggle="collapse" data-target="#myNavbar_support" class="collapsed" aria-expanded="false">FORUM</a></li>
+                    <li ng-class="{ active: isNavMenuItemActive('/contact/support/'+lang)}"><a href="#contact/support/{{lang}}"  data-toggle="collapse" data-target="#myNavbar_support" class="collapsed" aria-expanded="false">KONTAKT SERVICE</a></li>
+                  </ul>
+                <br><br>
+              </div>
+             
+             
+          </div>  
+           
+         
+      </div>
+    </div>
+  </nav>

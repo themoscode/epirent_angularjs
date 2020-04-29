@@ -1,0 +1,104 @@
+<div class="support_page knowledge_base">
+	<div ng-include="'content/de/support/_navigation/index.html'"></div>
+	<div class="sector1" >
+	  <div class="container-fluid text-center">
+	    
+			<!--
+		    <h1 ><span>epi</span>rent</h1>      
+			<p >Knowledge Base</p>
+			-->
+				<div class="text1">
+						<span>epi</span>rent
+				</div>
+				<div class="text2">
+						Knowledge Base
+				</div>
+	    
+        
+        <div class="row">
+			
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<form ng-submit="getSearchResults()" name="_searchFaqForm">
+						<div class="form-group" ng-class="{ 'has-error' : _searchFaqForm.searchText.$invalid && !_searchFaqForm.searchText.$pristine }">
+							<div class="input-group">
+								<span class="input-group-addon cursorPointer" ng-click="getResults()" type="submit"><i class="glyphicon glyphicon-search"></i></span>
+								<input class="form-control input-lg" type="text" placeholder="Bitte einen Suchbegriff mit Leerzeichen getrennt eingeben. (z.B. Dokumentvorlagen importieren)" ng-model="searchFaqForm.searchText" name="searchText" required>
+							</div>
+						</div>
+					</form>	
+					
+					<div class="text-center" ng-show="searchResults"><h1 class="text1a" style="font-size:30px;color:white;letter-spacing:0px;margin-top:5px">Suchergebnis ({{searchResults.length}})</h1></div>
+					<div <div ng-show="searchDone">
+						<div ng-hide="searchResults" style="font-size:20px;color:white">
+							<br>
+							Nichts gefunden. Bitte ändern Sie Ihre Suchanfrage. 
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-sm-2"></div>
+			
+		</div>
+
+	  </div>
+	</div>
+	
+	<div class="container qa_wrapper">
+			
+			<div class="row">
+			
+				<div class="col-sm-1"></div>
+				<div class="col-sm-10">
+					
+						<div ng-show="searchDone"> 
+							
+							<div ng-show="searchResults">
+								
+								<br>  
+								<uib-accordion close-others="true">
+                                    
+									<uib-accordion-group is-open="status.open" ng-repeat="row in searchResults"> 
+										
+										<uib-accordion-heading > 
+											
+											<div ng-bind-html="row.question" class="pull-left text-left"></div> 
+											<div class="text-right"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></div>
+											
+										</uib-accordion-heading>
+										
+										<div class="text-left text3" ng-bind-html="row.answer" style="font-size:17px;"></div>
+										<div ng-hide="row.votedResult" class="hidden-xs">
+											<br>
+											<div class="text-right text3" style="font-size:17px;">Hat mir das geholfen? &nbsp;&nbsp;<button class="btn btn-default button1b" ng-click="voteResult('yes',row)">Ja</button>&nbsp;<button class="btn btn-default button1b" ng-click="voteResult('nein',row)">Nein</button></div>
+											
+										</div>	
+
+										<div class="text-left text3 visible-xs" style="font-size:17px;" ng-hide="row.votedResult">Hat mir das geholfen? <br><br>
+											<button class="btn btn-default button1b" ng-click="voteResult('yes',row)">ja</button>
+											&nbsp;
+											<button class="btn btn-default button1b" ng-click="voteResult('no',row)">Nein</button>
+										</div>
+
+									</uib-accordion-group>     
+										                
+								</uib-accordion>
+ 
+							</div>
+							
+							
+						</div>
+							
+				    
+				</div>
+				<div class="col-sm-1"></div>
+			
+			</div>
+			
+			
+			
+		</div>
+	
+	
+</div>
+<br><br><br>

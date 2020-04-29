@@ -1,0 +1,20 @@
+<!-- 
+1.TEXT
+2.IMAGE
+3.TEXT-IMAGE
+4.IMAGE-TEXT
+5.VIDEO
+6.TEXT-VIDEO
+7.VIDEO-TEXT
+-->
+<div ng-if="pageRows[0].disable_carousel == 0">
+	<div ng-include="'content/_carousel/index.html'"></div>
+</div>
+
+<div class="overview_page">
+
+	<div ng-repeat="row in pageRows">
+		<div ng-include="'content/_cms/templates/'+row.template_id+'.html'"></div>	
+	</div>
+
+</div>

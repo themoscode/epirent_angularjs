@@ -1,0 +1,153 @@
+<div class="products_pages start questions">
+        
+        <div class="container">
+            <br>
+            <button class="btn btn-primary" type="button" style="float:right" ng-click="logOutUser();">Ausloggen</button>
+        </div>
+        <div class="container" ng-show="current_question==0">
+  
+                <div style="height: 70px;"></div>
+                <h1 class="text1"><span class="bold">epi</span>rent sagt „Hallo“!</h1>
+                <h1 class="text2">Es geht los.</h1>
+                <div style="height:50px"></div>
+                <p class="text3 justify-to-left">  
+                        Herzlich willkommen im epirent Universum. Du hast die Registrierungs-Mail erhalten und den Link zu Deinem Account bestätigt.
+                        Nun bist Du bei uns als Interessent im System angelegt. Bist Du bereits Kunde und brauchst den vollen Zugang zum Kundenportal,
+                        antworte einfach kurz auf die Bestätigungs-Mail und informiere uns, damit wir Deinen Status aktualisieren können.
+                        <br><br>
+                        Wir haben für Dich einen kleinen Fragenkatalog zusammengestellt, damit wir Dich professionell zu einer Lösung mit epirent begleiten können.
+                        Deine Antworten sind für unseren Erstkontakt wichtig, um eine solide Basis herzustellen und ein individuelles System für Dich zu finden.
+                        Nimm Dir 10 Minuten Zeit diese Fragen in den nächsten Schritten zu beantworten. Unser Sales-Team wird Dich schnellstmöglich
+                        zu Deiner Anfrage kontaktieren, so dass Du herausfinden kannst, ob epirent das richtige System für Dich ist.
+                </p>
+                <br><br><br>
+                <a class="btn btn-default button1" ng-click="current_question=-1;guide_page=1">Los geht's..</a>
+                <br><br><br><br>
+        
+        </div>  
+        
+    <div class="container" ng-show="guide_page>0">
+        
+        <div ng-show="guide_page==1" class="guide_page animate-show-hide2"><!-- guide page 1-->
+            <h1 class="text1">Wir starten mit dem ersten Kapitel.</h1>
+            <h1 class="text2">Die Grundkonfiguration</h1><br>
+            <a class="btn btn-default button1" ng-click="show_question(0)">Weiter</a>
+        </div> 
+        <div ng-show="guide_page==2" class="guide_page animate-show-hide2"><!-- guide page 2-->
+            <h1 class="text1">Weiter gehts mit dem nächsten Kapitel.</h1>
+            <h1 class="text2">Unsere Services.</h1><br>
+            <a class="btn btn-default button1" ng-click="show_question(5)">Weiter</a>
+        </div> 
+        <div ng-show="guide_page==3" class="guide_page animate-show-hide2"><!-- guide page 3-->
+            <h1 class="text1">Auf zum dritten und vorletzten Kapitel.</h1>
+            <h1 class="text2">Unsere Erweiterungen.</h1><br>
+            <a class="btn btn-default button1" ng-click="show_question(8)">Weiter</a>
+        </div> 
+        <div ng-show="guide_page==4" class="guide_page animate-show-hide2"><!-- guide page 4-->
+            <h1 class="text1">Gleich ist es geschafft.</h1>
+            <h1 class="text2">Unsere Service-Verträge.</h1><br>
+            <a class="btn btn-default button1" ng-click="show_question(17)">Weiter</a>
+        </div> 
+        <div ng-show="guide_page==5" class="guide_page animate-show-hide2"><!-- guide page 5-->
+            <h1 class="text1">Du hast es geschafft!</h1>
+            <h1 class="text2">Und wir haben den Plan.</h1>
+            <p class="text3 text-center">  
+                Unser Sales-Team wird Dich nun schnellstmöglich kontaktieren. Du wirst jetzt zu Deinem Profil weitergeleitet.
+            </p><br>
+            <a class="btn btn-default button1" ng-click="postData()">Vielen Dank</a>
+        </div> 
+
+    </div>
+
+      <div class="container" ng-show="current_question>0">
+  
+          <div style="height: 70px;"></div>
+          <div>
+               
+            
+              <div ng-show="current_question>=1 && current_question<=5" >
+                    <h1 class="text1">Die Grundkonfiguration.</h1>
+                    <h1 class="text2">Der Start.</h1>
+                    <div style="height:50px"></div>
+                    <p class="text3 text-center">  
+                            Beantworte ganz spontan die nächsten fünf Fragen zum Thema Grundkonfiguration, um einen Anhaltspunkt herzustellen.
+                    </p>
+              </div>
+              
+              
+
+              <div ng-show="current_question>=6 && current_question<=8" >
+                <h1 class="text1">Services für den effektiven Start.</h1>
+                <h1 class="text2">Perfekt zum Zeitsparen und Loslegen.</h1>
+                <div style="height:50px"></div>
+                <p class="text3 text-center">  
+                        Die nächsten drei Fragen beziehen sich auf Services, um Deine epirent Lösung solide zum Start zu bringen.
+                </p>
+              </div>
+              
+              
+
+
+              <div ng-show="current_question>=9 && current_question<=17" >
+                <h1 class="text1">Die epirent Erweiterungen.</h1>
+                <h1 class="text2">Deine individuellen Zusatzfunktionen.</h1>
+                <div style="height:50px"></div>
+                <p class="text3 text-center">  
+                        Die folgenden 8 Fragen behandeln das Thema unserer zusätzlichen Module für epirent.
+                </p>
+              </div>
+              
+              
+
+
+              <div ng-show="current_question>=18 && current_question<=26" >
+                <h1 class="text1">Gleich hast Du es geschafft</h1>
+                <h1 class="text2">Service-Verträge für eine perfekt Unterstützung.</h1>
+                <div style="height:50px"></div>
+                <p class="text3 text-center">  
+                        Die letzten acht Fragen sind für Dein Unternehmen so wichtig, weil wir Dich auf Deinem Weg mit viel Erfahrung und Wissen gerne unterstützen.
+    
+                </p>
+              </div>
+
+              
+
+          </div>
+          
+            
+            <br><br><br>
+  
+            
+            <div class="row"  >
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" style="height:350px;">
+                    
+                    <form name="questionsForm">
+                        <div ng-repeat="x in questions" ng-show="questions[$index].show" class="animate-show-hide">
+                           
+                            <div class="text3 quest_answer_gap">{{x.question}}</div>
+                            <br>
+                            <div ng-if="x.type=='number'">
+                                <input type="number" min="{{x.min}}" ng-model="questions[$index].answer">
+                                <button style="width:70px;padding-right:0;padding-left:0;" ng-click="answer($parent.$index,questions[$index].answer)" type="button" class="btn btn-default button3" ng-disabled="!isNumber(questions[$index].answer)">Weiter</button>
+                            </div>
+                            <div ng-if="x.type=='multiple'">
+                                <button ng-repeat="a in x.answers" ng-click="answer($parent.$index,a)" type="button" class="btn btn-default button3" style="padding-right:0;padding-left:0;margin-right:5px;margin-top:5px;width:70px">{{a}}</button>
+                            </div>
+                            <div ng-if="x.type=='end'">
+                                <a class="btn btn-default button1" ng-click="postData()">Weiter</a>
+                            </div>
+                            <br><br>
+                        </div>
+                    </form>  
+                    
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="height_end">
+                <br><br><br><br>
+            </div>
+  
+      </div>
+      
+  </div>
